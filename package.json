@@ -1,0 +1,38 @@
+{
+  "name": "grunt-dotnet-assembly-info",
+  "version": "1.0.0",
+  "description": "grunt plugin for editing .NET assembly info files",
+  "homepage": "https://github.com/mikeobrien/grunt-dotnet-assembly-info",
+  "bugs": {
+    "url": "https://github.com/mikeobrien/grunt-dotnet-assembly-info/issues"
+  },
+  "main": "tasks/grunt-dotnet-assembly-info.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeobrien/grunt-dotnet-assembly-info.git"
+  },
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    ".net",
+    "dotnet",
+    "assembly"
+  ],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Mike O'Brien",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "expect.js": "~0.2.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-release": "~0.6.0",
+    "mocha": "~1.15.1",
+    "grunt-mocha-test": "~0.8.1"
+  },
+  "peerDependencies": {
+    "grunt": "0.4.x"
+  }
+}
