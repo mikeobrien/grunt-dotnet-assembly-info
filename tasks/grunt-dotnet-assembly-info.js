@@ -1,7 +1,11 @@
 module.exports = function(grunt) {
     grunt.registerTask('assemblyinfo', 'Sets .NET assembly information.', function() {
-        console.log('Setting assembly info to:');
         var options = this.options();
-        Object.keys(options).forEach(function(option) { console.log('  ' +  option + ': ' + options[option]); });
+        var keys = Object.keys(options);
+
+        if (keys.length < 1) grunt.warn('No assembly info options set.');
+
+        console.log('Setting assembly info to:');
+        keys.forEach(function(option) { console.log('  ' +  option + ': ' + options[option]); });
     });
 };
