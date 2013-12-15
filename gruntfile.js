@@ -9,11 +9,12 @@ module.exports = function(grunt) {
         jshint: { files: files },
         mochaTest: {
             test: {
-                options: {
-                    reporter: 'spec'
-                },
+                options: { reporter: 'spec' },
                 src: files
             }
+        },
+        release: {
+            options: { commitMessage: 'NPM Release v<%= version %>' }
         }
     });
 
