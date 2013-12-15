@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Core", "Project.Core\Project.Core.csproj", "{0F7CF1F4-4CCD-42BB-88B6-3F92109A4830}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.ClassLibrary", "Project.ClassLibrary.csproj", "{0F7CF1F4-4CCD-42BB-88B6-3F92109A4830}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Web", "Project.Web\Project.Web.csproj", "{6BB28EF9-A750-4FA3-AA2C-19D0685F0061}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WebApplication", "Project.WebApplication\Project.WebApplication.csproj", "{6BB28EF9-A750-4FA3-AA2C-19D0685F0061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{D93EDCD7-E0A3-46A5-BED1-FB8A1CCB6471}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WpfApplication", "..\Project.WpfApplication\Project.WpfApplication.csproj", "{6BB28EF9-A750-4FA3-AA2C-19D0685F0061}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

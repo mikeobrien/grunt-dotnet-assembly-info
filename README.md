@@ -39,6 +39,7 @@ assemblyinfo: {
     product: 'Planet Express Website', 
     copyright: 'Copyright 3002 © Planet Express', 
     trademark: 'Planet Express', 
+    culture: 'div-MV',
     version: '2.0', 
     fileVersion: '2.0.3.2345'
 }
