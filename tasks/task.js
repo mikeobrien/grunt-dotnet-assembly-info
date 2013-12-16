@@ -7,8 +7,10 @@ module.exports = function(grunt) {
         var options = this.options({ filename: 'AssemblyInfo.cs' });
         var attrs;
 
-        if (!options.info || (attrs = Object.keys(options.info)).length < 1) 
+        if (!options.info || (attrs = Object.keys(options.info)).length === 0) 
             grunt.warn('No assembly info options set.');
+
+        if (!options.files || options.files.length === 0) grunt.warn('No files specified.');
 
         console.log('  Setting ' + options.filename + ' with:');
         console.log();
@@ -23,6 +25,8 @@ module.exports = function(grunt) {
                 default: files.push(file);
             }
         });
+
+        if (files.length === 0) grunt.warn('No assembly info files found.');
 
         console.log('Files:');
         console.log();
