@@ -22,26 +22,30 @@ assembly information:
 
 ```js
 assemblyinfo: {
-    // Can either be a solution, project or assembly info file
-    files: ['src/MySolution.sln', 
-            'src/MyProject/MyProject.csproj', 
-            'src/MyProject/Properties/AssemblyInfo.cs'],
+    options: {
+        // Can either be a solution, project or assembly info file
+        files: ['src/MySolution.sln', 
+                'src/MyProject/MyProject.csproj', 
+                'src/MyProject/Properties/AssemblyInfo.cs'],
 
-    // Filename to search for when a solution or project is 
-    // specified above. Default is AssemblyInfo.cs.
-    filename: 'MyCustomAssemblyInfo.cs', 
+        // Filename to search for when a solution or project is 
+        // specified above. Default is AssemblyInfo.cs.
+        filename: 'MyCustomAssemblyInfo.cs', 
 
-    // Standard assembly info attributes
-    title: 'Planet Express Website', 
-    description: 'Shipping and tracking website.', 
-    configuration: 'Release', 
-    company: 'Planet Express', 
-    product: 'Planet Express Website', 
-    copyright: 'Copyright 3002 © Planet Express', 
-    trademark: 'Planet Express', 
-    culture: 'div-MV',
-    version: '2.0', 
-    fileVersion: '2.0.3.2345'
+        // Standard assembly info
+        info: {
+            title: 'Planet Express Website', 
+            description: 'Shipping and tracking website.', 
+            configuration: 'Release', 
+            company: 'Planet Express', 
+            product: 'Planet Express Website', 
+            copyright: 'Copyright 3002 © Planet Express', 
+            trademark: 'Planet Express', 
+            culture: 'div-MV',
+            version: '2.0', 
+            fileVersion: '2.0.3.2345'
+        }
+    }
 }
 ```
 
