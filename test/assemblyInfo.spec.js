@@ -27,6 +27,7 @@ var result =
     '[assembly: Guid("5e92281a-f318-4b4c-87f4-dba1a0f4ef48")]\r\n' +
     '\r\n' +
     '// Version information for an assembly consists of the following four values:\r\n' +
+    '// [assembly: AssemblyVersion("This is the version")]\r\n' +
     '[assembly: AssemblyVersion("This is the version")]\r\n' +
     '[assembly: AssemblyFileVersion("This is the file version")]';
 

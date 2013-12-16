@@ -17,5 +17,6 @@
 [assembly: Guid("5e92281a-f318-4b4c-87f4-dba1a0f4ef48")]
 
 // Version information for an assembly consists of the following four values:
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
