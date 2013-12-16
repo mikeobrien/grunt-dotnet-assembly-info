@@ -23,7 +23,7 @@ assembly information:
 ```js
 assemblyinfo: {
     options: {
-        // Can either be a solution, project or assembly info file
+        // Can be solutions, projects or individual assembly info files
         files: ['src/MySolution.sln', 
                 'src/MyProject/MyProject.csproj', 
                 'src/MyProject/Properties/AssemblyInfo.cs'],
