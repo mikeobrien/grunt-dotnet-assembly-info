@@ -1,4 +1,4 @@
-# grunt-dotnet-assembly-info [![Build Status](https://api.travis-ci.org/mikeobrien/grunt-dotnet-assembly-info.png?branch=master)](https://travis-ci.org/mikeobrien/grunt-dotnet-assembly-info)
+# grunt-dotnet-assembly-info [![Build Status](https://api.travis-ci.org/mikeobrien/grunt-dotnet-assembly-info.png?branch=master)](https://travis-ci.org/mikeobrien/grunt-dotnet-assembly-info) [![NPM version](https://badge.fury.io/js/grunt-dotnet-assembly-info.png)](https://npmjs.org/package/grunt-dotnet-assembly-info)
 Grunt plugin for editing .NET assembly info files.
 NOTE: this plugin requires Grunt 0.4.x and currently only supports C#.
 
