@@ -49,7 +49,5 @@ assemblyinfo: {
 }
 ```
 
-When the task is run it will attempt to find existing `Assembly*` attributes and update those. If it does not find those it will append them to the assembly info file.
-
 ## License
 MIT License
