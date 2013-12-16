@@ -14,7 +14,7 @@ var attributes = {
 };
 
 exports.setAttributes = function(source, values) {
-    var regex = function(attr) { return new RegExp('(\\[assembly\\: ' + attr + '\\(\\")(.*?)(\\"\\)\\])'); };
+    var regex = function(attr) { return new RegExp('(\\[assembly\\: ' + attr + '\\(\\")(.*?)(\\"\\)\\])', 'g'); };
     var result = source;
     Object.keys(values).forEach(function(name) { 
         result = result.replace(regex(attributes[name]), '$1' + values[name] + '$3'); 

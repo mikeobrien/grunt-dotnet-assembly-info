@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
         console.log('Files:');
         console.log();
-        files.forEach(function(file) { '  ' + console.log(file); });
+        files.forEach(function(file) { console.log('  ' + file); });
 
         assemblyInfo.setFileAttrbutes(files, options.info);
     });
