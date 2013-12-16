@@ -12,7 +12,8 @@ module.exports = function(grunt) {
 
         if (!options.files || options.files.length === 0) grunt.warn('No files specified.');
 
-        console.log('  Setting ' + options.filename + ' with:');
+        console.log();
+        console.log('Setting ' + options.filename + ' with:');
         console.log();
         attrs.forEach(function(attr) { console.log('  ' +  attr + ': ' + options.info[attr]); });
         console.log();
@@ -30,8 +31,7 @@ module.exports = function(grunt) {
 
         console.log('Files:');
         console.log();
-        files.forEach(function(file) { console.log(file); });
-        console.log();
+        files.forEach(function(file) { '  ' + console.log(file); });
 
         assemblyInfo.setFileAttrbutes(files, options.info);
     });
