@@ -1,4 +1,5 @@
-var expect = require('expect.js'),
+var path = require('path'),
+    expect = require('expect.js'),
     msbuild = require('../tasks/msbuild.js');
 
 describe('msbuild', function() {
@@ -7,9 +8,9 @@ describe('msbuild', function() {
 
         var projects = msbuild.getSolutionProjects('test/Data/Solution/Solution.sln');
         expect(projects.length).to.be(3);
-        expect(projects[0]).to.be('test/Data/Solution/Project.ClassLibrary.csproj');
-        expect(projects[1]).to.be('test/Data/Solution/Project.WebApplication/Project.WebApplication.csproj');
-        expect(projects[2]).to.be('test/Data/Project.WpfApplication/Project.WpfApplication.csproj');
+        expect(projects[0]).to.be(path.normalize('test/Data/Solution/Project.ClassLibrary.csproj'));
+        expect(projects[1]).to.be(path.normalize('test/Data/Solution/Project.WebApplication/Project.WebApplication.csproj'));
+        expect(projects[2]).to.be(path.normalize('test/Data/Project.WpfApplication/Project.WpfApplication.csproj'));
         
     });
 
@@ -17,7 +18,7 @@ describe('msbuild', function() {
 
         var files = msbuild.getProjectFiles('test/Data/Project.WpfApplication/Project.WpfApplication.csproj', 'AssemblyInfo.cs');
         expect(files.length).to.be(1);
-        expect(files[0]).to.be('test/Data/Project.WpfApplication/Properties/AssemblyInfo.cs');
+        expect(files[0]).to.be(path.normalize('test/Data/Project.WpfApplication/Properties/AssemblyInfo.cs'));
         
     });
 
@@ -25,9 +26,9 @@ describe('msbuild', function() {
 
         var files = msbuild.getSolutionFiles('test/Data/Solution/Solution.sln', 'AssemblyInfo.cs');
         expect(files.length).to.be(3);
-        expect(files[0]).to.be('test/Data/Solution/Properties/AssemblyInfo.cs');
-        expect(files[1]).to.be('test/Data/Solution/Project.WebApplication/Properties/AssemblyInfo.cs');
-        expect(files[2]).to.be('test/Data/Project.WpfApplication/Properties/AssemblyInfo.cs');
+        expect(files[0]).to.be(path.normalize('test/Data/Solution/Properties/AssemblyInfo.cs'));
+        expect(files[1]).to.be(path.normalize('test/Data/Solution/Project.WebApplication/Properties/AssemblyInfo.cs'));
+        expect(files[2]).to.be(path.normalize('test/Data/Project.WpfApplication/Properties/AssemblyInfo.cs'));
         
     });
 
