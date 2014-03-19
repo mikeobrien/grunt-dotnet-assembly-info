@@ -26,6 +26,7 @@
   "readmeFilename": "README.md",
   "files": [
     "tasks/**/*.js",
+    "helpers/**/*.js",
     "README.md",
     "LICENSE"
   ],
