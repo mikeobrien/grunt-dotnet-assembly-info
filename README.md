@@ -59,5 +59,12 @@ assemblyinfo: {
 }
 ```
 
+Contributors
+------------
+
+| [![Nate-Wilkins](https://avatars2.githubusercontent.com/u/2957868?s=144)](https://github.com/Nate-Wilkins) |
+|:---:|
+| [Nate-Wilkins](https://github.com/Nate-Wilkins) |
+
 ## License
 MIT License
