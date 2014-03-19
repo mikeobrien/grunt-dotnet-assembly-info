@@ -1,6 +1,6 @@
 {
   "name": "grunt-dotnet-assembly-info",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "grunt plugin for editing .NET assembly info files",
   "homepage": "https://github.com/mikeobrien/grunt-dotnet-assembly-info",
   "main": "tasks/task.js",
