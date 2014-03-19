@@ -1,4 +1,7 @@
-# grunt-dotnet-assembly-info [![Build Status](https://api.travis-ci.org/mikeobrien/grunt-dotnet-assembly-info.png?branch=master)](https://travis-ci.org/mikeobrien/grunt-dotnet-assembly-info) [![NPM version](https://badge.fury.io/js/grunt-dotnet-assembly-info.png)](https://npmjs.org/package/grunt-dotnet-assembly-info)
+# grunt-dotnet-assembly-info
+[![Build Status](https://api.travis-ci.org/mikeobrien/grunt-dotnet-assembly-info.png?branch=master)](https://travis-ci.org/mikeobrien/grunt-dotnet-assembly-info)
+[![NPM version](https://badge.fury.io/js/grunt-dotnet-assembly-info.png)](https://npmjs.org/package/grunt-dotnet-assembly-info)
+
 Grunt plugin for editing .NET assembly info files.
 NOTE: this plugin requires Grunt 0.4.x and currently only supports C#.
 
@@ -34,7 +37,7 @@ assemblyinfo: {
 
         // Standard assembly info
         info: {
-            title: 'Planet Express Website', 
+            title: 'Planet Express Website',
             description: 'Shipping and tracking website.', 
             configuration: 'Release', 
             company: 'Planet Express', 
@@ -42,7 +45,14 @@ assemblyinfo: {
             copyright: 'Copyright 3002 © Planet Express', 
             trademark: 'Planet Express', 
             culture: 'div-MV',
-            version: '2.0', 
+            version: function (value) {
+                var version = parseVersion(value);
+                if (version.patch > packageVersion.patch) {
+                    email('devs', patchNotes);
+                }
+                updatePackageVersion(version);
+                // If no value is returned the assembly version will not be modified
+            },
             fileVersion: '2.0.3.2345'
         }
     }
