@@ -30,7 +30,7 @@
     "LICENSE"
   ],
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.x",
     "expect.js": "~0.2.0",
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-release": "~0.6.0",

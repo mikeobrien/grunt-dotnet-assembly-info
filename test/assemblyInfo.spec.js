@@ -1,11 +1,11 @@
 var expect = require('expect.js'),
-    assemblyInfo = require('../tasks/assemblyInfo.js'),
+    selectors = require('../helpers/regex.js').selectors,
     fs = require('fs'),
     temp = require('temp'),
     path = require('path'),
     wrench = require('wrench');
 
-var source = fs.readFileSync('test/Data/Solution/Properties/AssemblyInfo.cs', 'utf8');
+var source = fs.readFileSync('test/Data/Solution/Properties/AssemblyInfo.cs', 'utf8').trim();
 
 var result = 
     'using System.Reflection;\r\n' +
@@ -45,7 +45,6 @@ var values = {
 };
 
 describe('assemblyInfo', function() {
-
     var data;
 
     beforeEach(function() {
@@ -59,24 +58,24 @@ describe('assemblyInfo', function() {
     });
 
     it('should set info attributes', function() {
-
-        var result = assemblyInfo.setAttributes(source, values);
-        expect(result).to.be(result);
-
+        var actual = source;
+        Object.keys(values).forEach(function(key) {
+            actual = actual.replace(selectors[key], '$1' + values[key] + '$3');
+        });
+        expect(actual).to.be(result);
     });
 
     it('should set info attributes in files', function() {
-
         var file1 = data + 'Solution/Properties/AssemblyInfo.cs',
             file2 = data + 'Solution/Project.WebApplication/Properties/AssemblyInfo.cs',
             file3 = data + 'Project.WpfApplication/Properties/AssemblyInfo.cs';
 
-        assemblyInfo.setFileAttrbutes([file1, file2, file3], values);
-
-        expect(fs.readFileSync(file1, 'utf8')).to.be('\ufeff' + result);
-        expect(fs.readFileSync(file2, 'utf8')).to.be('\ufeff' + result);
-        expect(fs.readFileSync(file3, 'utf8')).to.be('\ufeff' + result);
-
+        [file1, file2, file3].forEach(function(path) {
+            var source = fs.readFileSync(path, 'utf8').trim();
+            Object.keys(values).forEach(function(key) {
+                source = source.replace(selectors[key], '$1' + values[key] + '$3');
+            });
+            expect(source).to.be(result);
+        });
     });
-
 });
