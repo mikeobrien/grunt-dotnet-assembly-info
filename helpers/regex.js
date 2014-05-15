@@ -8,7 +8,8 @@ var attributes = {
     trademark: "AssemblyTrademark",
     culture: "AssemblyCulture",
     version: "AssemblyVersion",
-    fileVersion: "AssemblyFileVersion"
+    fileVersion: "AssemblyFileVersion",
+    informationalVersion: "AssemblyInformationalVersion"
 };
 
 var regex = function(attr) { return new RegExp('(\\[assembly\\: ' + attr + '\\(\\")(.*?)(\\"\\)\\])', 'g'); };
