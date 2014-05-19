@@ -29,7 +29,8 @@ var result =
     '// Version information for an assembly consists of the following four values:\r\n' +
     '// [assembly: AssemblyVersion("This is the version")]\r\n' +
     '[assembly: AssemblyVersion("This is the version")]\r\n' +
-    '[assembly: AssemblyFileVersion("This is the file version")]';
+    '[assembly: AssemblyFileVersion("This is the file version")]\r\n' +
+    '[assembly: AssemblyInformationalVersion("This is the informational version")]';
 
 var values = {
     title: 'This is the title',
@@ -41,7 +42,8 @@ var values = {
     trademark: 'This is the trademark',
     culture: 'This is the culture',
     version: 'This is the version',
-    fileVersion: 'This is the file version'
+    fileVersion: 'This is the file version',
+    informationalVersion: 'This is the informational version'
 };
 
 describe('assemblyInfo', function() {
