@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WebApplication", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WpfApplication", "..\Project.WpfApplication\Project.WpfApplication.csproj", "{1FCAE6AF-3004-4EB0-8DCF-D5E1CD1A0102}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NotExistingFolder", "NotExistingFolder", "{78523807-F07F-49EC-B8B4-BB5F1CB25B24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExistingFolder", "ExistingFolder", "{88A58E02-A9BA-4142-A915-5C43A59FCF4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F7CF1F4-4CCD-42BB-88B6-3F92109A4830} = {78523807-F07F-49EC-B8B4-BB5F1CB25B24}
+		{1FCAE6AF-3004-4EB0-8DCF-D5E1CD1A0102} = {88A58E02-A9BA-4142-A915-5C43A59FCF4E}
 	EndGlobalSection
 EndGlobal

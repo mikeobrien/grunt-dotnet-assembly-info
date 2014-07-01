@@ -20,8 +20,17 @@ describe('msbuild', function() {
     it('should enumerate solution files', function() {
         var files = msbuild.getSolutionFiles('test/Data/Solution/Solution.sln', 'AssemblyInfo.cs');
         expect(files.length).to.be(3);
-        expect(files[0]).to.be(path.normalize('test/Data/Solution/Properties/AssemblyInfo.cs'));
+		expect(files[0]).to.be(path.normalize('test/Data/Solution/Properties/AssemblyInfo.cs'));
         expect(files[1]).to.be(path.normalize('test/Data/Solution/Project.WebApplication/Properties/AssemblyInfo.cs'));
         expect(files[2]).to.be(path.normalize('test/Data/Project.WpfApplication/Properties/AssemblyInfo.cs'));
-    });
+    });	
+
+    it('should enumerate solution files skipping solution folders, existing or not', function() {
+        var files = msbuild.getSolutionFiles('test/Data/Solution/Solution.WithFolders.sln', 'AssemblyInfo.cs');
+        expect(files.length).to.be(3);
+		expect(files[0]).to.be(path.normalize('test/Data/Solution/Properties/AssemblyInfo.cs'));
+        expect(files[1]).to.be(path.normalize('test/Data/Solution/Project.WebApplication/Properties/AssemblyInfo.cs'));
+        expect(files[2]).to.be(path.normalize('test/Data/Project.WpfApplication/Properties/AssemblyInfo.cs'));
+    });	
+	
 });
