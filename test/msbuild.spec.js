@@ -20,20 +20,8 @@ describe('msbuild', function() {
     it('should enumerate phisical solution files skipping solution folders, existing or not', function() {
         var files = msbuild.getSolutionFiles('test/Data/Solution/Solution.sln', 'AssemblyInfo.cs');
         expect(files.length).to.be(3);
-        expect(files[0]).to.be(path.normalize('test/Data/Solution/Properties/AssemblyInfo.cs'));
+		expect(files[0]).to.be(path.normalize('test/Data/Solution/Properties/AssemblyInfo.cs'));
         expect(files[1]).to.be(path.normalize('test/Data/Solution/Project.WebApplication/Properties/AssemblyInfo.cs'));
         expect(files[2]).to.be(path.normalize('test/Data/Project.WpfApplication/Properties/AssemblyInfo.cs'));
-    });
-
-    //it('should enumerate solution files skipping solution folders ', function() {
-    //    var files = msbuild.getSolutionFiles('test/Data/AnotherSolution/ArSat.Services.GeoIp.sln', 'AssemblyInfo.cs');
-    //    expect(files.length).to.be(6);
-    //    expect(files[0]).to.be(path.normalize('test/Data/AnotherSolution/app/Arsat.Services.GeoIp.ServiceInterface/Properties/AssemblyInfo.cs'));
-    //    expect(files[1]).to.be(path.normalize('test/Data/AnotherSolution/app/Arsat.Services.GeoIp.ServiceModel/Properties/AssemblyInfo.cs'));
-    //    expect(files[2]).to.be(path.normalize('test/Data/AnotherSolution/app/ArSat.Services.GeoIp/Properties/AssemblyInfo.cs'));
-    //    expect(files[3]).to.be(path.normalize('test/Data/AnotherSolution/tests/ArSat.Services.GeoIp.Specs/Properties/AssemblyInfo.cs'));
-    //    expect(files[4]).to.be(path.normalize('test/Data/AnotherSolution/tests/ArSat.Services.GeoIp.Tests/Properties/AssemblyInfo.cs'));
-    //    expect(files[5]).to.be(path.normalize('test/Data/AnotherSolution/tests/ArSat.Services.GeoIp.Features/Properties/AssemblyInfo.cs'));
-    //});
-	
+    });	
 });
