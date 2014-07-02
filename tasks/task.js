@@ -1,5 +1,6 @@
 var path = require('path'),
     fs = require('fs'),
+    glob = require('glob'),
 
     msbuild = require('../helpers/msbuild.js'),
     selectors = require('../helpers/regex').selectors;
@@ -33,9 +34,18 @@ module.exports = function(grunt) {
             options.info[key] = value;
         });
 
+		// Process globbing if provided
+        var fileToProcess = [];
+        this.filesSrc.forEach(function (file) {
+            var filesFound = glob.sync(file);
+			filesFound.forEach(function (fileFound) {
+				fileToProcess.push(fileFound);
+			});
+        });
+
         // Obtain all files specified in grunt config and within any solution/project files that were also included
         var files = [];
-        this.filesSrc.forEach(function(file) {
+        fileToProcess.forEach(function (file) {
             switch (path.extname(file.trim())) {
                 case '.sln': files = files.concat(msbuild.getSolutionFiles(file, options.filename)); break;
                 case '.csproj': files = files.concat(msbuild.getProjectFiles(file, options.filename)); break;

@@ -134,7 +134,7 @@
     <Compile Include="TimeHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Project.Core\Project.Core.csproj">
+    <ProjectReference Include="..\Project.ClassLibrary.csproj">
       <Project>{0f7cf1f4-4ccd-42bb-88b6-3f92109a4830}</Project>
       <Name>Project.Core</Name>
     </ProjectReference>
