@@ -31,9 +31,9 @@ describe('task', function(){
         temp.cleanup();
     });
 
-    it('should set assembly info on a solution', function() {
+    it('should set assembly info on a solution using globbing', function() {
         runTask({
-            files: [data + 'Solution/Solution.sln'],
+            files: [data + 'Solution/**/*.sln'],
             info: { title: 'This is the title' }
         });
 
@@ -46,7 +46,7 @@ describe('task', function(){
         expect(fs.readFileSync(file3, 'utf8')).to.contain(attribute);
     });
 
-    it('should set assembly info on a project', function() {
+    it('should set assembly info on a project', function () {
         runTask({
             files: [data + 'Project.WpfApplication/Project.WpfApplication.csproj'],
             info: { title: 'This is the title' }

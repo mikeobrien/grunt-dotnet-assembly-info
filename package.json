@@ -41,7 +41,8 @@
     "wrench": "~1.5.4",
     "temp": "~0.6.0",
     "sinon": "~1.7.3",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "glob": "~4.0.3"
   },
   "peerDependencies": {
     "grunt": "0.4.x"
