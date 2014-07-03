@@ -8,7 +8,7 @@ var expect = require('expect.js'),
     grunt = require('grunt');
 
 function runTask(options) {
-    var stubGrunt = { registerTask: sinon.spy(), util: grunt.util };
+    var stubGrunt = { registerTask: sinon.spy(), util: grunt.util, warn: grunt.warn, log: grunt.log };
     task(stubGrunt);
     var context = {
         options: function(defaults) { return _.defaults(options, defaults); },
@@ -65,4 +65,5 @@ describe('task', function(){
         var file = data + 'Project.WpfApplication/Properties/AssemblyInfo.cs';
         expect(fs.readFileSync(file, 'utf8')).to.contain(attribute);
     });
+
 });

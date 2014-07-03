@@ -22,16 +22,24 @@ module.exports = function(grunt) {
             this.filesSrc = options.files; // Backward compatibility?
         }
 
+        grunt.log.subhead('Assembly values:'.cyan.bold);
+
         // Normalize all the attribute values - make them all functions
-        var defaultAttrFn = function(replaceValue) { return function() { return replaceValue; }; };
-        attrs.forEach(function(key) {
-            var value = options.info[key];
-            var type = grunt.util.kindOf(value);
-            if (type !== 'function') {
-                if (type === 'string') { value = defaultAttrFn(value); }
-                else { grunt.warn('Invalid assembly info option.'); }
-            }
-            options.info[key] = value;
+        var defaultAttrFn = function (replaceValue) { return function () { return replaceValue; }; };
+        attrs.forEach(function (key) {
+            if (selectors[key]) {
+                var value = options.info[key];
+
+                grunt.log.writeln(('  ' + key + ': "' + value + '"').cyan.bold);
+
+                var type = grunt.util.kindOf(value);
+                if (type !== 'function') {
+                    if (type === 'string') { value = defaultAttrFn(value); }
+                    else { grunt.warn('Invalid assembly info option.'); }
+                }
+                options.info[key] = value;
+            } 
+            else grunt.warn('Invalid assembly info "' + key + '" option provided.');
         });
 
 		// Process globbing if provided
@@ -54,9 +62,9 @@ module.exports = function(grunt) {
         });
         if (files.length === 0) grunt.warn('No assembly info files found.');
 
-        console.log('Files:');
-        console.log();
-        files.forEach(function(path) {
+        console.log('Affected assembly files:');
+
+        files.forEach(function (path) {
             console.log('  ' + path);
 
             var contents = fs.readFileSync(path, 'utf8'),
@@ -64,6 +72,7 @@ module.exports = function(grunt) {
 
             attrs.forEach(function(key) {
                 var attrFn = options.info[key];
+
                 contents = contents.replace(selectors[key], function (match, p1, p2, p3) {
                     var newValue = attrFn.call(grunt, p2);
                     if (!newValue || newValue === p2) { return match; }
@@ -75,5 +84,6 @@ module.exports = function(grunt) {
             if (!modified) return;
             fs.writeFileSync(path, contents);
         });
+
     });
 };
