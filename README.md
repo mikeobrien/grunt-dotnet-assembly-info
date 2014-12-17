@@ -1,6 +1,6 @@
 # grunt-dotnet-assembly-info
 
-[![npm version](http://img.shields.io/npm/v/grunt-dotnet-assembly-info.svg)](https://npmjs.org/package/grunt-dotnet-assembly-info) [![build status](http://img.shields.io/travis/mikeobrien/grunt-dotnet-assembly-info.svg)](https://travis-ci.org/mikeobrien/grunt-dotnet-assembly-info) [![Dependency Status](http://img.shields.io/david/mikeobrien/grunt-dotnet-assembly-info.svg)](https://david-dm.org/mikeobrien/grunt-dotnet-assembly-info) [![npm downloads](http://img.shields.io/npm/dm/grunt-dotnet-assembly-info.svg)](https://npmjs.org/package/grunt-dotnet-assembly-info)
+[![npm version](http://img.shields.io/npm/v/grunt-dotnet-assembly-info.svg?style=flat)](https://npmjs.org/package/grunt-dotnet-assembly-info) [![build status](http://img.shields.io/travis/mikeobrien/grunt-dotnet-assembly-info.svg?style=flat)](https://travis-ci.org/mikeobrien/grunt-dotnet-assembly-info) [![Dependency Status](http://img.shields.io/david/mikeobrien/grunt-dotnet-assembly-info.svg?style=flat)](https://david-dm.org/mikeobrien/grunt-dotnet-assembly-info) [![npm downloads](http://img.shields.io/npm/dm/grunt-dotnet-assembly-info.svg?style=flat)](https://npmjs.org/package/grunt-dotnet-assembly-info)
 
 Grunt plugin for editing .NET assembly info files.
 NOTE: this plugin requires Grunt 0.4.x and currently only supports C#.
