@@ -44,7 +44,7 @@
     "temp": "~0.8.1"
   },
   "peerDependencies": {
-    "grunt": "0.4.x"
+    "grunt": ">=0.4.0"
   },
   "dependencies": {
     "glob": "~4.0.3"
